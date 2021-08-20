@@ -1,4 +1,6 @@
-const router = require('express').Router()
+const router = require('express').Router(),
+    Joi = require('joi')
+    sc = require('./paramschema.js')
 
 //this list for example
 let ourposts = {
@@ -17,9 +19,16 @@ let ourposts = {
 
 // dump posts content from database
 router.get('/:id',(req,res) => {
-    let Id = req.params.id
-    res.json(ourposts[Id])
-})
 
+    const { value , error } = sc.valid(req.query)
+    console.log(error1)
+    if(error){
+        res.json({"ERROR":error})
+        return 
+    }
+    console.log(value)
+    console.log(req.query)
+    res.json(ourposts[req.params.id])
+})
 
 module.exports = router
