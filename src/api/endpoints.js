@@ -40,6 +40,7 @@ router.put('/create/:addType/:id',async (req,res) => {
     res.send(`Created : ${req.params.id} to ${req.params.addType}`)
 })
 
+
 router.delete('/delete/:deleteType/:id',(req,res) => {
     res.json({"status":true})
 })
