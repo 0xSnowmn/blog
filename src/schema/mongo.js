@@ -5,24 +5,22 @@ const UsersSchema = new Schema({
     name:{  
         type: String,
         min: 2,
-        max: 20
-        required: true
+        max: 20,
+     //   required: true
     },
-    userename:{
+    username:{
         type: String,
         min: 2,
         max: 20,
-        required: true,
+        //required: true,
         unique: true,
     },
     bio:{
         type: String,
-        min: 2,
-        max: 20,
-        required: true,
-        unique: true
+        min: 1,
+        max: 300,
     },
     created: { type: Date, default: Date.now },
 });
 
-module.exports.UsersSchema = model('Users',UsersSchema)
+module.exports = model('Users',UsersSchema)
