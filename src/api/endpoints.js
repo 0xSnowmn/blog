@@ -12,6 +12,7 @@ router.get('/search/:searchType/:id',(req,res) => {
     }
 })
 
+
 router.put('/add/:addType/:id',(req,res) => {
     res.send(`Added : ${req.params.id} to ${rq.params.addType}`)
 })

@@ -3,7 +3,7 @@ const express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     mongoose = require("mongoose"),
-    apiEndpoints = require('./src/index.js')
+    apiEndpoints = require('./src/api/endpoints.js')
     require('dotenv').config(),
 
 mongoose.connect(process.env.DB_URL,{ useUnifiedTopology: true });
@@ -12,7 +12,7 @@ connection.once("open", () => console.log("DB is connected"));
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms')) // logger setup
 app.use(bodyParser.json()) // accept applications/json content-type requests
-app.use('/api/',apiEndpoints.postsendpoint) // posts api
+app.use('/api/',apiEndpoints) // posts api
 
 
 // run the server
