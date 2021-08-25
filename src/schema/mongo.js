@@ -40,12 +40,12 @@ const PostsSchema = new Schema ({
         type: Array
     },
     comments: [{
-         type: mongoose.Schema.Types.ObjectId,
+         type: Schema.Types.ObjectId,
          ref: 'Comment'
        }]
 })
 
-const commentSchema = new mongoose.Schema({
+const commentSchema = new Schema({
      text: {
           type: String,
           trim: true,
@@ -57,7 +57,7 @@ const commentSchema = new mongoose.Schema({
        },
     // each comment can only relates to one blog, so it's not in array
     post: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: Schema.Types.ObjectId,
           ref: 'Post'
        }
 })
