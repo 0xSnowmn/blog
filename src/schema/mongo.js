@@ -6,13 +6,13 @@ const UsersSchema = new Schema({
         type: String,
         min: 2,
         max: 20,
-     //   required: true
+        required: true
     },
     username:{
         type: String,
         min: 2,
         max: 20,
-        //required: true,
+        required: true,
         unique: true,
     },
     bio:{
